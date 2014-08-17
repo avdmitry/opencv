@@ -53,9 +53,9 @@ int main( int /*argc*/, char** /*argv*/ )
 
         randShuffle(points, 1, &rng);
 
-        kmeans(points, clusterCount, labels,
+        ml::kmeans(points, clusterCount, labels,
             TermCriteria( TermCriteria::EPS+TermCriteria::COUNT, 10, 1.0),
-               3, KMEANS_PP_CENTERS, centers);
+               3, ml::KMEANS_PP_CENTERS, centers);
 
         img = Scalar::all(0);
 

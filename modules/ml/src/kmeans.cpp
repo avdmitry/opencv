@@ -47,6 +47,8 @@
 
 namespace cv
 {
+namespace ml
+{
 
 static void generateRandomCenter(const std::vector<Vec2f>& box, float* center, RNG& rng)
 {
@@ -213,9 +215,7 @@ private:
     const Mat& centers;
 };
 
-}
-
-double cv::kmeans( InputArray _data, int K,
+double kmeans( InputArray _data, int K,
                    InputOutputArray _bestLabels,
                    TermCriteria criteria, int attempts,
                    int flags, OutputArray _centers )
@@ -454,4 +454,7 @@ double cv::kmeans( InputArray _data, int K,
     }
 
     return best_compactness;
+}
+
+}
 }

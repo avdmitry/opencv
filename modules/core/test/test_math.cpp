@@ -2671,8 +2671,8 @@ protected:
                     for( i = 0; i < N; i++ )
                         data[i] = data0[rng.uniform(0, N0)];
 
-                    kmeans(data, K, labels, TermCriteria(TermCriteria::MAX_ITER+TermCriteria::EPS, 30, 0),
-                           5, KMEANS_PP_CENTERS);
+                    ml::kmeans(data, K, labels, TermCriteria(TermCriteria::MAX_ITER+TermCriteria::EPS, 30, 0),
+                           5, ml::KMEANS_PP_CENTERS);
                 }
                 else
                 {
@@ -2716,8 +2716,8 @@ protected:
                         break;
                     }
 
-                    kmeans(data, K, labels, TermCriteria(TermCriteria::MAX_ITER+TermCriteria::EPS, 30, 0),
-                           5, KMEANS_PP_CENTERS);
+                    ml::kmeans(data, K, labels, TermCriteria(TermCriteria::MAX_ITER+TermCriteria::EPS, 30, 0),
+                           5, ml::KMEANS_PP_CENTERS);
                 }
 
                 Mat hist(K, 1, CV_32S, Scalar(0));

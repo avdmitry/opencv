@@ -52,8 +52,8 @@ PERF_TEST_P( MaxDim_MaxPoints, kmeans,
 
     TEST_CYCLE()
     {
-        kmeans(data, K, labels, TermCriteria(TermCriteria::MAX_ITER+TermCriteria::EPS, 30, 0),
-               attempts, KMEANS_PP_CENTERS, centers);
+        ml::kmeans(data, K, labels, TermCriteria(TermCriteria::MAX_ITER+TermCriteria::EPS, 30, 0),
+               attempts, ml::KMEANS_PP_CENTERS, centers);
     }
 
     Mat clusterPointsNumber = Mat::zeros(1, K, CV_32S);

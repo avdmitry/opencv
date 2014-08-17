@@ -4136,7 +4136,7 @@ cvKMeans2( const CvArr* _samples, int cluster_count, CvArr* _labels,
         (labels.cols == 1 || labels.rows == 1) &&
         labels.cols + labels.rows - 1 == data.rows );
 
-    double compactness = cv::kmeans(data, cluster_count, labels, termcrit, attempts,
+    double compactness = cv::ml::kmeans(data, cluster_count, labels, termcrit, attempts,
                                     flags, _centers ? cv::_OutputArray(centers) : cv::_OutputArray() );
     if( _compactness )
         *_compactness = compactness;
